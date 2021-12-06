@@ -1,0 +1,31 @@
+{
+    "name": "cjdevstudios/array-mapper",
+    "description": "Library to map one array schema to another",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CJDevStudios\\ArrayMapper\\": "src/",
+            "CJDevStudios\\ArrayMapper\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Curtis Conard",
+            "email": "cconard@cjdevstudios.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "platform": {
+        "php": "~7.4.0 | ~8.0.0"
+    },
+    "require": {
+        "php": "~7.4.0 | ~8.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.5.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests"
+    }
+}
