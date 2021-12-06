@@ -21,41 +21,41 @@ class MappingRule
 {
 
     /**
-     * @var string Path to the property in the source array.
+     * @var string|null Path to the property in the source array.
      */
-    private $source_path;
+    protected $source_path;
 
     /**
      * @var string Path to the property in the target array.
      */
-    private $target_path;
+    protected $target_path;
 
     /**
      * @var callable Callable to be used to map the source value to the target value.
      * If not set, the source value will be used as the target value.
      */
-    private $transform;
+    protected $transform;
 
     /**
      * @var mixed The default value to use if the source property is missing.
      * This has no effect if {@link $ignore_missing} or {@link $no_default} are true.
      */
-    private $default_value = null;
+    protected $default_value = null;
 
     /**
      * @var bool If true, no default value will be used if the source property is missing.
      */
-    private $no_default = true;
+    protected $no_default = true;
 
     /**
      * @var bool If true and the target property is missing after the transform, a {@link MappingException} will be thrown.
      */
-    private $required = true;
+    protected $required = true;
 
     /**
      * @var bool If true and the source property is missing, the mapping will be skipped without throwing an exception.
      */
-    private $ignore_missing = false;
+    protected $ignore_missing = false;
 
     /**
      * @param string $source_path
@@ -65,7 +65,7 @@ class MappingRule
      * @param bool $required
      * @param bool $ignore_missing
      */
-    public function __construct(string $source_path, string $target_path, $default_value = null, bool $no_default = true, bool $required = true, bool $ignore_missing = false)
+    public function __construct(?string $source_path, string $target_path, $default_value = null, bool $no_default = true, bool $required = true, bool $ignore_missing = false)
     {
         $this->source_path = $source_path;
         $this->target_path = $target_path;
